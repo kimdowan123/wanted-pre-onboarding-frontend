@@ -13,7 +13,7 @@ npm install
 npm start
 ```
 ## 사용기술 & 라이브러리
-- React
+- ReactJS
 - Sass
 - Axios
 - react-router-dom
