@@ -1,15 +1,25 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom'
+import { Navigate, Routes, Route } from 'react-router-dom'
+import LoginPage from './page/login/LoginPage'
+import TodoPage from './page/todo/TodoPage'
+import { useEffect, useState } from 'react';
+
 function App() {
+
+  const [token, setToken] = useState(true);
+
+  useEffect(() => {
+    if (localStorage.getItem("access_token")) {
+      setToken(false);
+    }
+  });
+
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<div>로그인페이지</div>}></Route>
-        <Route path="/todo" element={<div>todolist</div>}></Route>
+        <Route path="/" element={token ? <LoginPage /> :  <Navigate to="/todo"/>} />
+        <Route path="/todo" element={token ? <Navigate to="/"/> : <TodoPage />} />
       </Routes>
-
-
-
     </div >
   );
 }
