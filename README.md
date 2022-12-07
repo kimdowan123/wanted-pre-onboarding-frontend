@@ -6,7 +6,7 @@
 
 - 배포링크 
  [https://kimdowan123-364416.du.r.appspot.com](https://kimdowan123-364416.du.r.appspot.com/)      
- [링크 설명 텍스트](링크주소){: target="_blank"} [구글 웹싸이트 가기](http://google.com){: target="_blank"}
+ 
 ## 프로젝트 실행
 
 #### 프로젝트 실행시 필요한 라이브러리
