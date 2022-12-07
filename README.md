@@ -24,6 +24,6 @@ npm start
 - Sass
 - Axios
 - react-router-dom
-- font awesome
+- Font-Awesome
 
 
