@@ -8,9 +8,7 @@
  [https://kimdowan123-364416.du.r.appspot.com](https://kimdowan123-364416.du.r.appspot.com/)
  
 ## 프로젝트 실행
-```
-<span style="color:red"> 글씨색 변경 </span>
-```
+
 #### 프로젝트 파일
 
 ```
