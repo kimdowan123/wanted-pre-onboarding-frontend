@@ -1,6 +1,6 @@
 # 원티드 프리온보딩 선발과제 (프론트엔드)
 
-## 데모영상 (배포링크)
+## <span style="color:red"> 데모영상 (배포링크) </span>
 
 - 데모영상은 배포 링크로 대체 하였습니다. (google cloud platform (GCP)사용)
 
