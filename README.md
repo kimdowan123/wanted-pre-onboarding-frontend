@@ -18,9 +18,10 @@ npm start
 - Axios
 - react-router-dom
 - font awesome
+- 
 ## 데모영상 (배포링크)
 
-- 데모영상은 배포 링크로 대체합니다.  
+- 데모영상은 배포 링크로 대체 하였습니다.  
 
 - 배포링크 https://kimdowan123-364416.du.r.appspot.com/
 
