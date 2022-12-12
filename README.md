@@ -1,8 +1,22 @@
 # 원티드 프리온보딩 선발과제 (프론트엔드)
 
 ## 데모영상 
+### 회원가입
+![회원가입](https://user-images.githubusercontent.com/97826223/206983517-ac00e5fb-4d49-4017-91af-73d8decf6efc.gif)  
 
-![회원가입](https://user-images.githubusercontent.com/97826223/206983517-ac00e5fb-4d49-4017-91af-73d8decf6efc.gif)   
+### 로그인
+
+### 토큰 로그인 리다이렉트
+
+### 리스트 생성
+
+### 리스트 삭제
+
+### 리스트 수정
+
+### 리스트 완료여부
+
+
  
 ## 프로젝트 실행
 
