@@ -8,7 +8,7 @@
 ![로그인](https://user-images.githubusercontent.com/97826223/206984605-0d22cb92-df2f-454b-825c-8abe66969ccb.gif)
 
 ### 토큰 로그인 리다이렉트
-
+![리다이렉트](https://user-images.githubusercontent.com/97826223/206985118-a358d96f-25d1-4d6b-93d2-4359100bfcac.gif)
 ### 리스트 생성
 
 ### 리스트 삭제
