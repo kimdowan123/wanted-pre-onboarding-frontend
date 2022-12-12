@@ -23,6 +23,12 @@ https://kimdowan123-364416.du.r.appspot.com/
  
 ## 프로젝트 실행
 
+#### 프로젝트 clone
+
+```
+git clone https://github.com/kimdowan123/wanted-pre-onboarding-frontend.git
+```
+
 #### 프로젝트 실행시 필요한 라이브러리
 
 ```
