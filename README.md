@@ -18,7 +18,7 @@ https://kimdowan123-364416.du.r.appspot.com/
 ![생성,삭제](https://user-images.githubusercontent.com/97826223/206985835-2754bf69-f11b-44ab-8b41-43ea8e052a19.gif)
 
 ### 리스트 수정 & 완료여부체크
-![수정,체크](https://user-images.githubusercontent.com/97826223/206986744-83bd9661-b20f-455c-8032-05735aa7267b.gif)
+
 
  
 ## 프로젝트 실행
