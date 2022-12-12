@@ -2,6 +2,9 @@
 
 ## 데모영상 
 
+### 배포링크 
+https://kimdowan123-364416.du.r.appspot.com/
+
 ### 회원가입
 ![회원가입](https://user-images.githubusercontent.com/97826223/206983517-ac00e5fb-4d49-4017-91af-73d8decf6efc.gif)  
 
