@@ -40,6 +40,7 @@ npm install
 ```
 npm start
 ```
+localhost:3000 으로 실행됩니다.
 ## 사용기술 & 라이브러리
 - ReactJS
 - Sass
