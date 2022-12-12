@@ -30,11 +30,12 @@ git clone https://github.com/kimdowan123/wanted-pre-onboarding-frontend.git
 ```
 
 #### 프로젝트 실행시 필요한 라이브러리
+프로젝트 복사후 해당파일로 이동후
 
 ```
 npm install
 ```
-
+합니다.
 #### 프로젝트 실행 명령어
 ```
 npm start
