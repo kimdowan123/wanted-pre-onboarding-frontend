@@ -5,6 +5,7 @@
 ![회원가입](https://user-images.githubusercontent.com/97826223/206983517-ac00e5fb-4d49-4017-91af-73d8decf6efc.gif)  
 
 ### 로그인
+![로그인](https://user-images.githubusercontent.com/97826223/206984605-0d22cb92-df2f-454b-825c-8abe66969ccb.gif)
 
 ### 토큰 로그인 리다이렉트
 
