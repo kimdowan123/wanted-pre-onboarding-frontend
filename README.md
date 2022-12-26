@@ -1,5 +1,5 @@
 # 원티드 프리온보딩 선발과제 (프론트엔드)
-
+[![Node.js CI](https://github.com/kimdowan123/wanted-pre-onboarding-frontend/actions/workflows/node.js.yml/badge.svg)](https://github.com/kimdowan123/wanted-pre-onboarding-frontend/actions/workflows/node.js.yml)
 ## 데모영상 & 배포링크 GCP(google cloud platform)
 
 ### 배포링크 
