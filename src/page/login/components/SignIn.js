@@ -28,7 +28,7 @@ function SignIn(props) {
             <div style={{ height: '1px' }}></div>
             <div className='loginContainer'>
 
-                <h1>프리온보딩 사전과제</h1>
+                <h1>CI/CD 테스트</h1>
                 <input type="text" placeholder='UserID' onInput={(e) => {
                     setId(e.target.value);
                 }} />
