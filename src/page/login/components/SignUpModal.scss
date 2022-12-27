@@ -1,10 +1,10 @@
-%alert-text{
+%alert-text {
   font-size: 11px;
   height: 20px;
   margin-left: 10px;
   margin-top: 20px;
 }
-%signUp-button{
+%signUp-button {
   margin-top: 30px;
   padding: 15px;
   width: 335px;
@@ -57,7 +57,7 @@
   margin: 0 auto;
   width: 330px;
   text-align: initial;
-  
+
   .correct {
     color: blue;
     @extend %alert-text;
@@ -68,7 +68,6 @@
     @extend %alert-text;
   }
 }
-
 
 .accountBTN {
   @extend %signUp-button;

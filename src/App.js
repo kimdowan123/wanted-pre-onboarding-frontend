@@ -1,15 +1,14 @@
 import './App.css';
-import { Navigate, Routes, Route } from 'react-router-dom'
-import LoginPage from './page/login/LoginPage'
-import TodoPage from './page/todo/TodoPage'
+import { Navigate, Routes, Route } from 'react-router-dom';
+import LoginPage from './page/login/LoginPage';
+import TodoPage from './page/todo/TodoPage';
 import { useEffect, useState } from 'react';
 
 function App() {
-
   const [token, setToken] = useState(true);
 
   useEffect(() => {
-    if (localStorage.getItem("access_token")) {
+    if (localStorage.getItem('access_token')) {
       setToken(false);
     }
   });
@@ -17,10 +16,16 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={token ? <LoginPage /> :  <Navigate to="/todo"/>} />
-        <Route path="/todo" element={token ? <Navigate to="/"/> : <TodoPage />} />
+        <Route
+          path="/"
+          element={token ? <LoginPage /> : <Navigate to="/todo" />}
+        />
+        <Route
+          path="/todo"
+          element={token ? <Navigate to="/" /> : <TodoPage />}
+        />
       </Routes>
-    </div >
+    </div>
   );
 }
 
