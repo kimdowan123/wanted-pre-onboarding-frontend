@@ -40,26 +40,29 @@ function SignIn(props) {
             setPw(e.target.value);
           }}
         />
-        {/* <div
+        <button
+          type="button"
           className="loginBtn"
           onClick={() => {
             loginFun();
           }}
         >
           Login
-        </div> */}
+        </button>
 
         <div className="loginAccount">
           Not a member?{' '}
-          {/* <span
+          <button
+            type="button"
             className="loginAccountBtn"
             onClick={() => {
+              // eslint-disable-next-line react/destructuring-assignment
               props.setModal(true);
             }}
           >
             {' '}
             Creat Account
-          </span> */}
+          </button>
         </div>
       </div>
     </div>

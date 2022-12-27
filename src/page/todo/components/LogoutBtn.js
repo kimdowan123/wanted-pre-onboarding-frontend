@@ -12,13 +12,14 @@ function LogoutBtn() {
 
   return (
     <div className="log-out-box">
-      {/* <button
+      <button
+        type="button"
         onClick={() => {
           logout();
         }}
       >
         로그아웃
-      </button> */}
+      </button>
     </div>
   );
 }
