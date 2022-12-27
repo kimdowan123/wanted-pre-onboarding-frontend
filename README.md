@@ -5,7 +5,7 @@
 
 ### 배포링크
 
-https://kimdowan123-364416.du.r.appspot.com/
+http://s3-deploy-kimdowan.s3-website.ap-northeast-2.amazonaws.com
 
 ### 회원가입
 
