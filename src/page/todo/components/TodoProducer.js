@@ -1,6 +1,6 @@
 import './TodoProducer.scss';
 import { useState } from 'react';
-import addData from '../../../api/addData';
+import { addTodo } from '../../../api/index';
 
 function TodoProducer({ Todo, setTodo }) {
   const [myText, setMyText] = useState('');
@@ -11,7 +11,7 @@ function TodoProducer({ Todo, setTodo }) {
     if (myText === '') {
       alert('값을 입력해주세요.');
     } else if (Todo.length < 6) {
-      addData(myText, setTodo);
+      addTodo(myText);
       onReset();
     } else {
       alert('7개 이하의 list가 입력가능합니다.');

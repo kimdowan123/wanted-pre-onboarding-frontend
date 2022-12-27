@@ -1,6 +1,6 @@
 import './TodoPage.scss';
 import { useEffect, useState } from 'react';
-import getData from '../../api/getData';
+import { getTodo } from '../../api/index';
 import LogoutBtn from './components/LogoutBtn';
 import TodoProducer from './components/TodoProducer';
 import TodoList from './components/TodoList';
@@ -9,7 +9,7 @@ function TodoPage() {
   const [Todo, setTodo] = useState([]);
 
   useEffect(() => {
-    getData(setTodo);
+    getTodo(setTodo);
   }, []);
 
   return (

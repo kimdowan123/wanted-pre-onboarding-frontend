@@ -2,9 +2,7 @@ import './TodoList.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faPencil, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import deleteData from '../../../api/deleteData';
-import reviseCheck from '../../../api/reviseCheck';
-import reviseText from '../../../api/reviseText';
+import { deleteTodo, reviseTodo } from '../../../api/index';
 
 function TodoList({ Todo, setTodo }) {
   const [userNumber, setUserNumber] = useState();
@@ -39,8 +37,7 @@ function TodoList({ Todo, setTodo }) {
                   type="button"
                   className="revise-BTN"
                   onClick={() => {
-                    const listBox = list;
-                    reviseText(listBox, reviseTextBox, setTodo, setUserNumber);
+                    reviseTodo(list);
                   }}
                 >
                   확인
@@ -53,8 +50,7 @@ function TodoList({ Todo, setTodo }) {
                   icon={faCheck}
                   className="checkIcon"
                   onClick={() => {
-                    const listBox = list;
-                    reviseCheck(setTodo, listBox);
+                    reviseTodo(list);
                   }}
                 />
                 <p className={list.isCompleted === false ? null : 'line-on'}>
@@ -73,8 +69,8 @@ function TodoList({ Todo, setTodo }) {
                   icon={faTrash}
                   className="trashIcon"
                   onClick={() => {
-                    const listId = list.id;
-                    deleteData(setTodo, listId);
+                    const todoID = list.id;
+                    deleteTodo(todoID);
                   }}
                 />
               </>
