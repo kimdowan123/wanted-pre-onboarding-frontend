@@ -1,8 +1,8 @@
 import './App.css';
 import { Navigate, Routes, Route } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import LoginPage from './page/login/LoginPage';
 import TodoPage from './page/todo/TodoPage';
-import { useEffect, useState } from 'react';
 
 function App() {
   const [token, setToken] = useState(true);
