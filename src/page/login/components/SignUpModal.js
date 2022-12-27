@@ -1,13 +1,17 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
-import signUp from '../../../api/signUp';
+import { handleSignup } from '../../../api/index';
 import './SignUpModal.scss';
 
 function SignUpModal(props) {
   const { modal } = props;
   const { setModal } = props;
 
+  const [userInfo, setUserInfo] = useState({
+    email: '',
+    password: '',
+  });
   // SignUp state
   const [signUpId, setSignUpId] = useState('');
   const [IdMessage, setIdMessage] = useState('');
@@ -80,7 +84,9 @@ function SignUpModal(props) {
           type="text"
           placeholder="Email을 입력해주세요."
           onInput={(e) => {
-            EmailCheck(e);
+            const box = { ...userInfo };
+            box.email = e.target.value;
+            setUserInfo(box);
           }}
         />
 
@@ -94,7 +100,9 @@ function SignUpModal(props) {
           type="password"
           placeholder="Password를 입력해주세요."
           onInput={(e) => {
-            passWordCheck(e);
+            const box = { ...userInfo };
+            box.password = e.target.value;
+            setUserInfo(box);
           }}
         />
 
@@ -105,7 +113,8 @@ function SignUpModal(props) {
           }
           disabled={activateBTN}
           onClick={() => {
-            signUp(signUpId, signUpPw, setModal);
+            handleSignup();
+            // signUp(signUpId, signUpPw, setModal);
           }}
         >
           제출

@@ -1,23 +1,24 @@
 import { useState } from 'react';
-import signIn from '../../../api/signIn';
+import { handleSignin } from '../../../api/index';
 import './SignIn.scss';
 
 function SignIn(props) {
-  const [Id, setId] = useState('');
-  const [Pw, setPw] = useState('');
-
+  const [userInfo, setUserInfo] = useState({
+    email: '',
+    password: '',
+  });
   const loginFun = () => {
-    if (Id === '') {
+    if (userInfo.email === '') {
       alert('Id를 입력해주세요.');
-    } else if (Id.includes('@') === false) {
+    } else if (userInfo.email.includes('@') === false) {
       alert('@을 포함한 이메일 형식으로 입력해주세요.');
-    } else if (Id.includes('@') === true) {
-      if (Pw.length === 0) {
+    } else if (userInfo.email.includes('@') === true) {
+      if (userInfo.password.length === 0) {
         alert('비밀번호를 입력해주세요.');
-      } else if (Pw.length < 8) {
+      } else if (userInfo.password.length < 8) {
         alert('비밀번호는 8자리이상입니다.');
-      } else if (Pw.length >= 8) {
-        signIn(Id, Pw);
+      } else if (userInfo.password.length >= 8) {
+        handleSignin(userInfo);
       }
     }
   };
@@ -30,14 +31,18 @@ function SignIn(props) {
           type="text"
           placeholder="UserID"
           onInput={(e) => {
-            setId(e.target.value);
+            const box = { ...userInfo };
+            box.email = e.target.value;
+            setUserInfo(box);
           }}
         />
         <input
           type="password"
           placeholder="Password"
           onInput={(e) => {
-            setPw(e.target.value);
+            const box = { ...userInfo };
+            box.password = e.target.value;
+            setUserInfo(box);
           }}
         />
         <button
