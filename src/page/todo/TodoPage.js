@@ -9,7 +9,9 @@ function TodoPage() {
   const [Todo, setTodo] = useState([]);
 
   useEffect(() => {
-    getTodo(setTodo);
+    getTodo().then((res) => {
+      setTodo(res.data);
+    });
   }, []);
 
   return (

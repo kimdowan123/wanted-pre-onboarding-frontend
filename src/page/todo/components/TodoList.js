@@ -2,12 +2,21 @@ import './TodoList.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faPencil, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import { deleteTodo, reviseTodo } from '../../../api/index';
+import { getTodo, deleteTodo, reviseTodo } from '../../../api/index';
 
 function TodoList({ Todo, setTodo }) {
   const [userNumber, setUserNumber] = useState();
   const [reviseTextBox, setReviseText] = useState('');
 
+  const reviseClick = (list) => {
+    const box = { ...list };
+    box.todo = reviseTextBox;
+    reviseTodo(box).then(() => {
+      getTodo().then((res) => {
+        setTodo(res.data);
+      });
+    });
+  };
   return (
     <div className="Todo-Container">
       {Todo.map((list, index) => {
@@ -37,7 +46,14 @@ function TodoList({ Todo, setTodo }) {
                   type="button"
                   className="revise-BTN"
                   onClick={() => {
-                    reviseTodo(list);
+                    setUserNumber(0);
+                    const box = { ...list };
+                    box.todo = reviseTextBox;
+                    reviseTodo(box).then(() => {
+                      getTodo().then((res) => {
+                        setTodo(res.data);
+                      });
+                    });
                   }}
                 >
                   확인
@@ -50,7 +66,13 @@ function TodoList({ Todo, setTodo }) {
                   icon={faCheck}
                   className="checkIcon"
                   onClick={() => {
-                    reviseTodo(list);
+                    const box = { ...list };
+                    box.isCompleted = !box.isCompleted;
+                    reviseTodo(box).then(() => {
+                      getTodo().then((res) => {
+                        setTodo(res.data);
+                      });
+                    });
                   }}
                 />
                 <p className={list.isCompleted === false ? null : 'line-on'}>
@@ -70,7 +92,11 @@ function TodoList({ Todo, setTodo }) {
                   className="trashIcon"
                   onClick={() => {
                     const todoID = list.id;
-                    deleteTodo(todoID);
+                    deleteTodo(todoID).then(() => {
+                      getTodo().then((res) => {
+                        setTodo(res.data);
+                      });
+                    });
                   }}
                 />
               </>

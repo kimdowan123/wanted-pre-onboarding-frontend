@@ -44,7 +44,7 @@ export const deleteTodo = async (todoID) => {
 };
 
 export const reviseTodo = async (list) => {
-  const body = { todo: list.todo, isCompleted: !list.isCompleted };
+  const body = { todo: list.todo, isCompleted: list.isCompleted };
   try {
     const response = await instance.put(`${TODO_URL}/${list.id}`, body, {
       headers: {
