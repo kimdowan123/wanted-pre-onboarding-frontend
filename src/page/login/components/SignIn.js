@@ -24,7 +24,6 @@ function SignIn(props) {
 
   return (
     <div className="loginPage">
-      <div style={{ height: '1px' }}></div>
       <div className="loginContainer">
         <h1>CI/CD 테스트 임닙다</h1>
         <input
@@ -41,18 +40,18 @@ function SignIn(props) {
             setPw(e.target.value);
           }}
         />
-        <div
+        {/* <div
           className="loginBtn"
           onClick={() => {
             loginFun();
           }}
         >
           Login
-        </div>
+        </div> */}
 
         <div className="loginAccount">
           Not a member?{' '}
-          <span
+          {/* <span
             className="loginAccountBtn"
             onClick={() => {
               props.setModal(true);
@@ -60,7 +59,7 @@ function SignIn(props) {
           >
             {' '}
             Creat Account
-          </span>
+          </span> */}
         </div>
       </div>
     </div>
