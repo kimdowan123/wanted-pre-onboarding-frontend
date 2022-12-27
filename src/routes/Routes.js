@@ -1,20 +1,19 @@
 import React from 'react';
 import { Navigate, useRoutes } from 'react-router-dom';
-// import { Auth, Todo } from '../pages';
-// import { getAccessToken } from '../utils';
+import { getToken } from '../utils/token';
 import { LoginPage, TodoPage } from '../page/index';
 
 const Router = () => {
-  //   const isToken = getAccessToken();
-
+  const isToken = getToken();
+  
   const routes = useRoutes([
     {
       path: '/',
-      element: <LoginPage />,
+      element: isToken ? <Navigate replace to="/todo" /> : <LoginPage />,
     },
     {
       path: '/todo',
-      element: <TodoPage />,
+      element: isToken ? <TodoPage /> : <Navigate replace to="/" />,
     },
   ]);
   return routes;
