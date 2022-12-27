@@ -1,4 +1,5 @@
 import { handleSignin, handleSignup } from './auth';
 import { getTodo, deleteTodo, addTodo, reviseTodo } from './todo';
 
-export { handleSignin, handleSignup, getTodo, deleteTodo, addTodo, reviseTodo };
+export { handleSignin, handleSignup };
+export { getTodo, deleteTodo, addTodo, reviseTodo };
