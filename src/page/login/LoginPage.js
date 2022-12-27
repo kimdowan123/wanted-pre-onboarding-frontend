@@ -7,9 +7,9 @@ function LoginPage() {
   return (
     <>
       {/* 회원가입 모달 */}
-      <SignUpModal modal={modal} setModal={setModal}></SignUpModal>
+      <SignUpModal modal={modal} setModal={setModal} />
       {/* 로그인페이지 */}
-      <SignIn setModal={setModal}></SignIn>
+      <SignIn setModal={setModal} />
     </>
   );
 }

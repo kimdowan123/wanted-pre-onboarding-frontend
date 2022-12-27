@@ -3,11 +3,12 @@ import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import signUp from '../../../api/signUp';
 import './SignUpModal.scss';
-function SignUpModal(props) {
-  const modal = props.modal;
-  const setModal = props.setModal;
 
-  //SignUp state
+function SignUpModal(props) {
+  const { modal } = props;
+  const { setModal } = props;
+
+  // SignUp state
   const [signUpId, setSignUpId] = useState('');
   const [IdMessage, setIdMessage] = useState('');
   const [IdCheck, setIdCheck] = useState(false);
@@ -16,7 +17,7 @@ function SignUpModal(props) {
   const [PwMessage, setPwMessage] = useState('');
   const [PwCheck, setPwCheck] = useState(false);
 
-  //회원가입 버튼 활성화/비활성화
+  // 회원가입 버튼 활성화/비활성화
   const [activateBTN, setActivateBTN] = useState(true);
 
   useEffect(() => {
@@ -98,6 +99,7 @@ function SignUpModal(props) {
         />
 
         <button
+          type="button"
           className={
             activateBTN === true ? 'disabled-accountBTN' : 'accountBTN'
           }

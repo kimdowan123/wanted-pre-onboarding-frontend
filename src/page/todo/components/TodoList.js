@@ -12,9 +12,9 @@ function TodoList({ Todo, setTodo }) {
 
   return (
     <div className="Todo-Container">
-      <div style={{ height: '1px' }}></div>
       {Todo.map((list, index) => {
         return (
+          // eslint-disable-next-line react/no-array-index-key
           <div className="Todo-list" key={index}>
             {userNumber === list.id ? (
               <span>
@@ -26,6 +26,7 @@ function TodoList({ Todo, setTodo }) {
                   }}
                 />
                 <button
+                  type="button"
                   className="revise-BTN"
                   onClick={() => {
                     setUserNumber(0);
@@ -35,6 +36,7 @@ function TodoList({ Todo, setTodo }) {
                 </button>
 
                 <button
+                  type="button"
                   className="revise-BTN"
                   onClick={() => {
                     const listBox = list;

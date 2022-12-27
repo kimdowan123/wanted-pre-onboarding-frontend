@@ -33,6 +33,7 @@ function TodoProducer({ Todo, setTodo }) {
           }}
         />
         <button
+          type="button"
           onClick={() => {
             updateData();
           }}

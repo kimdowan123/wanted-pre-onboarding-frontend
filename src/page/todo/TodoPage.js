@@ -1,4 +1,4 @@
-import '../todo/TodoPage.scss';
+import './TodoPage.scss';
 import { useEffect, useState } from 'react';
 import getData from '../../api/getData';
 import LogoutBtn from './components/LogoutBtn';
@@ -14,13 +14,11 @@ function TodoPage() {
 
   return (
     <div className="TodoPage">
-      <div style={{ height: '1px' }}></div>
-
       <LogoutBtn />
 
       <TodoProducer Todo={Todo} setTodo={setTodo} />
 
-      <TodoList Todo={Todo} setTodo={setTodo}></TodoList>
+      <TodoList Todo={Todo} setTodo={setTodo} />
     </div>
   );
 }
