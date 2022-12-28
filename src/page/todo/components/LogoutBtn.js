@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { LogoutSection, LogoutButton } from './styled';
+import { LogoutSection, LogoutButton } from '../styled';
 
 function LogoutBtn() {
   const navigate = useNavigate();

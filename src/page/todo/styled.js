@@ -142,6 +142,7 @@ export const Trash = styled(FaTrashAlt)`
 export const Check = styled(FaRegCheckSquare)`
   font-size: 20px;
   cursor: pointer;
+  margin-top: 2px;
   color: ${(props) => (props.isCompleted === false ? 'gray' : 'red')};
 
   &:hover {

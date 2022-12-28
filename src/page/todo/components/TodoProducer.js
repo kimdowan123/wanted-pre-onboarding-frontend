@@ -1,6 +1,6 @@
 // import './TodoProducer.scss';
 import { useState } from 'react';
-import { TodoLogo, ProducerSection } from './styled';
+import { TodoLogo, ProducerSection } from '../styled';
 import { addTodo, getTodo } from '../../../api/index';
 
 function TodoProducer({ Todo, setTodo }) {

@@ -1,16 +1,33 @@
 /* eslint-disable react/no-array-index-key */
 import { useState } from 'react';
-import { ListContainer, MyList, Pencil, Trash, Check } from './styled';
+import { ListContainer, MyList, Pencil, Trash, Check } from '../styled';
 import { getTodo, deleteTodo, reviseTodo } from '../../../api/index';
 
 function TodoList({ Todo, setTodo }) {
-  const [userNumber, setUserNumber] = useState();
   const [reviseTextBox, setReviseText] = useState('');
+  const [userNumber, setUserNumber] = useState();
 
-  const reviseClick = (list) => {
+  const reviseFun = (list) => {
     const box = { ...list };
     box.todo = reviseTextBox;
     reviseTodo(box).then(() => {
+      getTodo().then((res) => {
+        setTodo(res.data);
+      });
+    });
+  };
+  const checkFun = (list) => {
+    const box = { ...list };
+    box.isCompleted = !box.isCompleted;
+    reviseTodo(box).then(() => {
+      getTodo().then((res) => {
+        setTodo(res.data);
+      });
+    });
+  };
+  const deleteFun = (list) => {
+    const todoID = list.id;
+    deleteTodo(todoID).then(() => {
       getTodo().then((res) => {
         setTodo(res.data);
       });
@@ -37,18 +54,11 @@ function TodoList({ Todo, setTodo }) {
                 >
                   취소
                 </button>
-
                 <button
                   type="button"
                   onClick={() => {
                     setUserNumber(0);
-                    const box = { ...list };
-                    box.todo = reviseTextBox;
-                    reviseTodo(box).then(() => {
-                      getTodo().then((res) => {
-                        setTodo(res.data);
-                      });
-                    });
+                    reviseFun(list);
                   }}
                 >
                   확인
@@ -60,13 +70,7 @@ function TodoList({ Todo, setTodo }) {
                 <Check
                   isCompleted={list.isCompleted}
                   onClick={() => {
-                    const box = { ...list };
-                    box.isCompleted = !box.isCompleted;
-                    reviseTodo(box).then(() => {
-                      getTodo().then((res) => {
-                        setTodo(res.data);
-                      });
-                    });
+                    checkFun(list);
                   }}
                 />
                 <p>{list.todo}</p>
@@ -81,12 +85,7 @@ function TodoList({ Todo, setTodo }) {
                 {/* 삭제버튼 */}
                 <Trash
                   onClick={() => {
-                    const todoID = list.id;
-                    deleteTodo(todoID).then(() => {
-                      getTodo().then((res) => {
-                        setTodo(res.data);
-                      });
-                    });
+                    deleteFun(list);
                   }}
                 />
               </>
