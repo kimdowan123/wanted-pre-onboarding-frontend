@@ -1,8 +1,13 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import { handleSignup } from '../../../api/index';
-import './SignUpModal.scss';
+import {
+  BackModal,
+  WhiteModal,
+  Xicon,
+  AlertSection,
+  IdMes,
+  PwMes,
+} from '../styled';
 
 function SignUpModal(props) {
   const { modal } = props;
@@ -13,16 +18,14 @@ function SignUpModal(props) {
     password: '',
   });
   // SignUp state
-  const [signUpId, setSignUpId] = useState('');
   const [IdMessage, setIdMessage] = useState('');
   const [IdCheck, setIdCheck] = useState(false);
 
-  const [signUpPw, setSignUpPw] = useState('');
   const [PwMessage, setPwMessage] = useState('');
   const [PwCheck, setPwCheck] = useState(false);
 
   // 회원가입 버튼 활성화/비활성화
-  const [activateBTN, setActivateBTN] = useState(true);
+  const [ActivateBTN, setActivateBTN] = useState(true);
 
   useEffect(() => {
     if (IdCheck && PwCheck === true) {
@@ -44,13 +47,13 @@ function SignUpModal(props) {
     } else if (inputId.includes('@') === true) {
       setIdCheck(true);
       setIdMessage('올바른 양식입니다.');
-      setSignUpId(inputId);
     }
   };
 
   // 비밀번호 유효성검사 function
   const passWordCheck = (e) => {
     const inputPw = e.target.value;
+
     if (inputPw === '') {
       setPwMessage('');
     } else if (inputPw.length < 8) {
@@ -59,27 +62,22 @@ function SignUpModal(props) {
     } else {
       setPwCheck(true);
       setPwMessage('올바른 양식입니다.');
-      setSignUpPw(inputPw);
     }
   };
 
   return (
-    <div className={modal === true ? 'BlackModal' : 'Disabled-BlackModal'}>
-      <div className="whiteModal">
-        <FontAwesomeIcon
-          icon={faXmark}
-          className="xMark"
+    <BackModal modal={modal}>
+      <WhiteModal>
+        <Xicon
           onClick={() => {
             setModal(false);
           }}
         />
         <h2>회원가입</h2>
-        <div className="alert">
-          <p>* 아이디</p>{' '}
-          <p className={IdCheck === true ? 'correct' : 'non-correct'}>
-            {IdMessage}
-          </p>
-        </div>
+        <AlertSection>
+          <p>* 아이디</p>
+          <IdMes IdCheck={IdCheck}>{IdMessage}</IdMes>
+        </AlertSection>
         <input
           type="text"
           placeholder="Email을 입력해주세요."
@@ -87,15 +85,14 @@ function SignUpModal(props) {
             const box = { ...userInfo };
             box.email = e.target.value;
             setUserInfo(box);
+            EmailCheck(e);
           }}
         />
 
-        <div className="alert">
-          <p>* 비밀번호</p>{' '}
-          <p className={PwCheck === true ? 'correct' : 'non-correct'}>
-            {PwMessage}
-          </p>
-        </div>
+        <AlertSection>
+          <p>* 비밀번호</p>
+          <PwMes PwCheck={PwCheck}>{PwMessage}</PwMes>
+        </AlertSection>
         <input
           type="password"
           placeholder="Password를 입력해주세요."
@@ -103,24 +100,21 @@ function SignUpModal(props) {
             const box = { ...userInfo };
             box.password = e.target.value;
             setUserInfo(box);
+            passWordCheck(e);
           }}
         />
 
         <button
           type="button"
-          className={
-            activateBTN === true ? 'disabled-accountBTN' : 'accountBTN'
-          }
-          disabled={activateBTN}
+          disabled={ActivateBTN}
           onClick={() => {
-            handleSignup();
-            // signUp(signUpId, signUpPw, setModal);
+            handleSignup(userInfo);
           }}
         >
           제출
         </button>
-      </div>
-    </div>
+      </WhiteModal>
+    </BackModal>
   );
 }
 export default SignUpModal;
