@@ -1,10 +1,12 @@
 /* eslint-disable no-alert */
 /* eslint-disable react/destructuring-assignment */
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { SignInContainer, Input, LoginBtn, SignUpBtn } from '../styled';
 import { handleSignin } from '../../../api/index';
 
 function SignIn(props) {
+  const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState({
     email: '',
     password: '',
@@ -21,7 +23,7 @@ function SignIn(props) {
       } else if (userInfo.password.length < 8) {
         alert('비밀번호는 8자리이상입니다.');
       } else if (userInfo.password.length >= 8) {
-        handleSignin(userInfo);
+        handleSignin(userInfo, navigate);
       }
     }
   };
