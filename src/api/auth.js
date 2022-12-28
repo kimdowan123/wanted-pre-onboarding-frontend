@@ -3,26 +3,21 @@ import { setToken } from '../utils/token';
 import { SIGNUP_URL, SIGNIN_URL } from '../constants';
 
 /** 로그인 요청 */
-export const handleSignin = (userInfo) => {
-  instance
-    .post(SIGNIN_URL, userInfo)
-    .then((response) => {
-      setToken(response);
-    })
-    .catch((error) => {
-      //   alert(error.response.data.message);
-    });
+export const handleSignin = async (userInfo) => {
+  try {
+    const response = await instance.post(SIGNIN_URL, userInfo);
+    return setToken(response);
+  } catch (err) {
+    // alert(err);
+  }
 };
 
 /** 회원가입 요청 */
-export const handleSignup = (userInfo) => {
-  instance
-    .post(SIGNUP_URL, userInfo)
-    .then(() => {
-      alert('회원가입을 완료하셧습니다.');
-      window.location.replace('/');
-    })
-    .catch((error) => {
-      //   alert(error.response.data.message);
-    });
+export const handleSignup = async (userInfo) => {
+  try {
+    await instance.post(SIGNUP_URL, userInfo);
+    return window.location.replace('/');
+  } catch (err) {
+    // alert(err);
+  }
 };
