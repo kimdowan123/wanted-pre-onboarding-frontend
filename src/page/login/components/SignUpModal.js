@@ -7,7 +7,7 @@ import {
   AlertSection,
   IdMes,
   PwMes,
-} from '../styled';
+} from './styled';
 
 function SignUpModal(props) {
   const { modal } = props;

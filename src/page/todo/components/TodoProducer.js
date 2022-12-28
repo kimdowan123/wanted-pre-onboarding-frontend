@@ -1,5 +1,6 @@
-import './TodoProducer.scss';
+// import './TodoProducer.scss';
 import { useState } from 'react';
+import { TodoLogo, ProducerSection } from './styled';
 import { addTodo, getTodo } from '../../../api/index';
 
 function TodoProducer({ Todo, setTodo }) {
@@ -23,11 +24,10 @@ function TodoProducer({ Todo, setTodo }) {
   };
   return (
     <>
-      <div className="Todo-Logo">
+      <TodoLogo>
         <h1>To-Do List</h1>
-      </div>
-
-      <div className="Todo-producer">
+      </TodoLogo>
+      <ProducerSection>
         <input
           type="text"
           value={myText}
@@ -44,7 +44,7 @@ function TodoProducer({ Todo, setTodo }) {
         >
           Add
         </button>
-      </div>
+      </ProducerSection>
     </>
   );
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import SignUpModal from './components/SignUpModal';
 import SignIn from './components/SignIn';
-import { Container } from './styled';
+import { Container } from '../../styles/global';
 
 function LoginPage() {
   const [modal, setModal] = useState(false);

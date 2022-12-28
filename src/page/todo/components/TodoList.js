@@ -1,7 +1,6 @@
-import './TodoList.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faPencil, faCheck } from '@fortawesome/free-solid-svg-icons';
+/* eslint-disable react/no-array-index-key */
 import { useState } from 'react';
+import { ListContainer, MyList, Pencil, Trash, Check } from './styled';
 import { getTodo, deleteTodo, reviseTodo } from '../../../api/index';
 
 function TodoList({ Todo, setTodo }) {
@@ -18,15 +17,13 @@ function TodoList({ Todo, setTodo }) {
     });
   };
   return (
-    <div className="Todo-Container">
+    <ListContainer>
       {Todo.map((list, index) => {
         return (
-          // eslint-disable-next-line react/no-array-index-key
-          <div className="Todo-list" key={index}>
+          <MyList key={index}>
             {userNumber === list.id ? (
-              <span>
+              <>
                 <input
-                  className="revise-input"
                   defaultValue={list.todo}
                   onInput={(e) => {
                     setReviseText(e.target.value);
@@ -34,7 +31,6 @@ function TodoList({ Todo, setTodo }) {
                 />
                 <button
                   type="button"
-                  className="revise-BTN"
                   onClick={() => {
                     setUserNumber(0);
                   }}
@@ -44,7 +40,6 @@ function TodoList({ Todo, setTodo }) {
 
                 <button
                   type="button"
-                  className="revise-BTN"
                   onClick={() => {
                     setUserNumber(0);
                     const box = { ...list };
@@ -58,13 +53,12 @@ function TodoList({ Todo, setTodo }) {
                 >
                   확인
                 </button>
-              </span>
+              </>
             ) : (
               <>
                 {/* 완료 체크버튼 */}
-                <FontAwesomeIcon
-                  icon={faCheck}
-                  className="checkIcon"
+                <Check
+                  isCompleted={list.isCompleted}
                   onClick={() => {
                     const box = { ...list };
                     box.isCompleted = !box.isCompleted;
@@ -75,21 +69,17 @@ function TodoList({ Todo, setTodo }) {
                     });
                   }}
                 />
-                <p className={list.isCompleted === false ? null : 'line-on'}>
-                  {list.todo}
-                </p>
+                <p>{list.todo}</p>
+
                 {/* 수정버튼 */}
-                <FontAwesomeIcon
-                  icon={faPencil}
-                  className="pencilIcon"
+                <Pencil
                   onClick={() => {
                     setUserNumber(list.id);
                   }}
                 />
+
                 {/* 삭제버튼 */}
-                <FontAwesomeIcon
-                  icon={faTrash}
-                  className="trashIcon"
+                <Trash
                   onClick={() => {
                     const todoID = list.id;
                     deleteTodo(todoID).then(() => {
@@ -101,10 +91,10 @@ function TodoList({ Todo, setTodo }) {
                 />
               </>
             )}
-          </div>
+          </MyList>
         );
       })}
-    </div>
+    </ListContainer>
   );
 }
 export default TodoList;

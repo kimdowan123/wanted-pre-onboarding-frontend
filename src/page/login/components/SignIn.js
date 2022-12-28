@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 /* eslint-disable react/destructuring-assignment */
 import { useState } from 'react';
-import { SignInContainer, Input, LoginBtn, SignUpBtn } from '../styled';
+import { SignInContainer, Input, LoginBtn, SignUpBtn } from './styled';
 import { handleSignin } from '../../../api/index';
 
 function SignIn(props) {
@@ -28,7 +28,7 @@ function SignIn(props) {
 
   return (
     <SignInContainer>
-      <h1>로그인</h1>
+      <h1>프리온보딩 사전과제</h1>
       <Input
         type="text"
         placeholder="UserID"

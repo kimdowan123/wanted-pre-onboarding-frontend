@@ -1,14 +1,6 @@
 import styled from 'styled-components';
 import { FaRegWindowClose } from 'react-icons/fa';
 
-/** 로그인 페이지 */
-export const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-color: #ffbc40;
-  padding: 1px;
-`;
-
 /** 로그인 박스 */
 export const SignInContainer = styled.div`
   background-color: white;

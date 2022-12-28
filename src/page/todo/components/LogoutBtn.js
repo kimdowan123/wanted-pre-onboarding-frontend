@@ -1,5 +1,5 @@
-import './LogoutBtn.scss';
 import { useNavigate } from 'react-router-dom';
+import { LogoutSection, LogoutButton } from './styled';
 
 function LogoutBtn() {
   const navigate = useNavigate();
@@ -11,16 +11,16 @@ function LogoutBtn() {
   };
 
   return (
-    <div className="log-out-box">
-      <button
+    <LogoutSection>
+      <LogoutButton
         type="button"
         onClick={() => {
           logout();
         }}
       >
         로그아웃
-      </button>
-    </div>
+      </LogoutButton>
+    </LogoutSection>
   );
 }
 export default LogoutBtn;
