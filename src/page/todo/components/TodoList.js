@@ -68,7 +68,7 @@ function TodoList({ Todo, setTodo }) {
               <>
                 {/* 완료 체크버튼 */}
                 <Check
-                  isCompleted={list.isCompleted}
+                  $isCompleted={list.isCompleted}
                   onClick={() => {
                     checkFun(list);
                   }}
