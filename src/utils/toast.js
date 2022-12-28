@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const loginToast = (message) => {
+export const AuthToast = (message) => {
   toast(message);
 };
